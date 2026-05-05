@@ -1,0 +1,142 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371, #00c9a7);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+  padding: 40px 20px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.3rem;
+  color: #fff;
+  text-shadow:
+    0 0 4px #000,
+    0 0 10px rgba(0,0,0,0.5);
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.95;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* CTA button */
+.cta-top {
+  margin: 20px 0 10px;
+}
+
+.cta-top a {
+  display: inline-block;
+  padding: 16px 28px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 999px;
+  box-shadow:
+    0 0 5px #ffcc00,
+    0 0 15px #ff7e5f;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-top a:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 10px #fff,
+    0 0 25px #ff7e5f;
+}
+
+/* Layout */
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(0,0,0,0.65);
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  line-height: 1.6;
+}
+
+/* Artwork */
+.art-section img {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 600px;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.3);
+  margin-top: 10px;
+}
+
+/* Artist name */
+.artist-name {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  background: linear-gradient(90deg, #ffcc00, #ff7e5f, #00c9a7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+/* Artist description */
+.art-description {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  color: #f1f1f1;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  .cta-top a {
+    width: 90%;
+    box-sizing: border-box;
+  }
+}
