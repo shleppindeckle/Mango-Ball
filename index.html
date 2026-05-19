@@ -7,11 +7,9 @@
 
   <style>
     :root {
-      --sun: #fff2a6;
       --mango: #ffb32c;
       --orange: #ff7a2f;
       --leaf: #0b4b3f;
-      --cream: #fff9d9;
     }
 
     * {
@@ -36,14 +34,15 @@
       width: 260px;
       height: 260px;
       border-radius: 50%;
-      background: rgba(255, 179, 44, 0.18);
       filter: blur(12px);
       z-index: -1;
+      pointer-events: none;
     }
 
     body::before {
       top: -80px;
       left: -60px;
+      background: rgba(255, 179, 44, 0.18);
     }
 
     body::after {
@@ -55,33 +54,13 @@
     .page {
       width: min(100%, 980px);
       margin: 0 auto;
-      padding: 24px 18px 40px;
+      padding: 24px 18px 36px;
       text-align: center;
     }
 
     .top {
-      position: relative;
-      margin-bottom: 30px;
-      padding: 24px 20px 10px;
-    }
-
-    .top::before,
-    .top::after {
-      content: "✦";
-      position: absolute;
-      top: 12px;
-      font-size: 2rem;
-      color: rgba(255, 122, 47, 0.45);
-    }
-
-    .top::before {
-      left: 8%;
-      transform: rotate(-14deg);
-    }
-
-    .top::after {
-      right: 8%;
-      transform: rotate(12deg);
+      margin-bottom: 28px;
+      padding: 20px 12px 4px;
     }
 
     .eyebrow {
@@ -99,11 +78,10 @@
     }
 
     h1 {
-      margin: 18px 0 10px;
-      padding-right: 42px;
-      font-size: clamp(3.8rem, 12vw, 7rem);
-      line-height: 0.88;
-      letter-spacing: -0.09em;
+      margin: 18px 0 20px;
+      font-size: clamp(3.3rem, 12vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
       text-transform: uppercase;
       background: linear-gradient(180deg, #ff9a1f 0%, #ff6d2d 100%);
       -webkit-background-clip: text;
@@ -112,27 +90,6 @@
         0 4px 0 rgba(255,255,255,0.45),
         0 12px 30px rgba(255, 122, 47, 0.18);
       transform: rotate(-1deg);
-      position: relative;
-      display: inline-block;
-    }
-
-    h1::after {
-      content: "🥭";
-      position: absolute;
-      right: -40px;
-      top: -12px;
-      font-size: 0.32em;
-      transform: rotate(14deg);
-      -webkit-text-fill-color: initial;
-      pointer-events: none;
-    }
-
-    .subtitle {
-      margin: 0 auto 24px;
-      max-width: 560px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: rgba(11, 75, 63, 0.88);
     }
 
     .button {
@@ -144,31 +101,25 @@
       text-decoration: none;
       font-weight: 800;
       font-size: 1rem;
-      letter-spacing: 0.01em;
       box-shadow: 0 14px 30px rgba(11, 75, 63, 0.2);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
       border: 2px solid rgba(255,255,255,0.25);
     }
 
     .button:hover {
-      transform: translateY(-2px) scale(1.01);
+      transform: translateY(-2px);
       box-shadow: 0 18px 36px rgba(11, 75, 63, 0.28);
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
     .flyer-wrap {
-      margin-top: 38px;
+      margin-top: 34px;
       position: relative;
     }
 
     .flyer-wrap::before {
       content: "";
       position: absolute;
-      inset: -14px;
-      border-radius: 38px;
+      inset: -12px;
+      border-radius: 34px;
       background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.08));
       z-index: -1;
     }
@@ -181,59 +132,58 @@
       border: 6px solid rgba(255,255,255,0.55);
     }
 
-    footer {
-      margin-top: 22px;
-      font-weight: 700;
-      opacity: 0.82;
-      letter-spacing: 0.03em;
-    }
-
     @media (max-width: 700px) {
       .page {
-        padding: 16px 10px 28px;
+        padding: 14px 8px 24px;
       }
 
       .top {
-        padding-top: 10px;
+        padding: 8px 8px 0;
+        margin-bottom: 18px;
       }
 
-      .top::before,
-      .top::after {
-        display: none;
+      .eyebrow {
+        font-size: 0.72rem;
+        padding: 8px 13px;
       }
 
       h1 {
-        font-size: clamp(3rem, 16vw, 5rem);
+        margin: 14px auto 18px;
+        font-size: clamp(2.7rem, 14.5vw, 4.6rem);
+        letter-spacing: -0.075em;
+        line-height: 0.92;
+        max-width: 95vw;
       }
 
-      h1::after {
-        right: -18px;
-        top: -6px;
+      .button {
+        width: min(100%, 360px);
+        padding: 15px 20px;
+        font-size: 0.95rem;
       }
 
-      .subtitle {
-        font-size: 1rem;
+      .flyer-wrap {
+        margin-top: 26px;
+      }
+
+      .flyer-wrap::before {
+        inset: -7px;
+        border-radius: 22px;
       }
 
       .flyer {
-        border-radius: 18px;
+        border-radius: 16px;
+        border-width: 4px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="leaf one"></div>
-  <div class="leaf two"></div>
-  <div class="leaf three"></div>
-
   <main class="page">
     <section class="top">
-      <div class="eyebrow">5th Annual · June 20th</div>
+      <div class="eyebrow">🥭 5th Annual · June 20th 🥭</div>
+
       <h1>Mango Ball ’26</h1>
-      <p class="subtitle">
-        
-      </p>
 
       <a class="button" href="https://www.zeffy.com/en-US/ticketing/mango-ball-2026-fundraiser-art-raffle">
         Enter the Fundraiser Art Raffle
@@ -243,10 +193,6 @@
     <section class="flyer-wrap">
       <img class="flyer" src="Mango_Ball2026.JPG" alt="Mango Ball 2026 flyer" />
     </section>
-
-    <footer>
-      🥭 Tropical attire encouraged 🥭
-    </footer>
   </main>
 </body>
 </html>
