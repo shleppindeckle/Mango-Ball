@@ -10,6 +10,7 @@
       --mango: #ffb32c;
       --orange: #ff7a2f;
       --leaf: #0b4b3f;
+      --cream: #fff7c8;
     }
 
     * {
@@ -54,27 +55,13 @@
     .page {
       width: min(100%, 980px);
       margin: 0 auto;
-      padding: 24px 18px 36px;
+      padding: 24px 18px 44px;
       text-align: center;
     }
 
     .top {
       margin-bottom: 28px;
       padding: 20px 12px 4px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 9px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.5);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.65);
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      box-shadow: 0 10px 24px rgba(255, 179, 44, 0.16);
     }
 
     h1 {
@@ -103,6 +90,7 @@
       font-size: 1rem;
       box-shadow: 0 14px 30px rgba(11, 75, 63, 0.2);
       border: 2px solid rgba(255,255,255,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .button:hover {
@@ -110,16 +98,122 @@
       box-shadow: 0 18px 36px rgba(11, 75, 63, 0.28);
     }
 
+    .video-section {
+      margin: 36px auto 34px;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 6px solid rgba(255,255,255,0.6);
+      box-shadow: 0 28px 70px rgba(11, 75, 63, 0.24);
+      background: rgba(255,255,255,0.35);
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .credits {
+      margin: 42px auto 0;
+      padding: 30px 22px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.48);
+      border: 1px solid rgba(255,255,255,0.72);
+      box-shadow: 0 22px 54px rgba(11, 75, 63, 0.16);
+      backdrop-filter: blur(6px);
+      text-align: left;
+    }
+
+    .credits h2 {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .credits-intro {
+      margin: 0 auto 28px;
+      max-width: 620px;
+      text-align: center;
+      font-weight: 750;
+      font-size: 1.05rem;
+    }
+
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .credit-card {
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.75);
+    }
+
+    .credit-card.wide {
+      grid-column: 1 / -1;
+    }
+
+    .credit-card h3 {
+      margin: 0 0 12px;
+      color: var(--orange);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .credit-card p,
+    .credit-card ul {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .credit-card ul {
+      list-style: none;
+      padding: 0;
+      columns: 2;
+      column-gap: 26px;
+    }
+
+    .credit-card li {
+      break-inside: avoid;
+      margin-bottom: 5px;
+    }
+
+    .closing {
+      margin: 28px auto 0;
+      max-width: 720px;
+      text-align: center;
+      font-weight: 850;
+      font-size: 1.15rem;
+      line-height: 1.45;
+    }
+
     .flyer-wrap {
-      margin-top: 34px;
+      margin: 34px auto 0;
+      width: min(100%, 420px);
       position: relative;
     }
 
     .flyer-wrap::before {
       content: "";
       position: absolute;
-      inset: -12px;
-      border-radius: 34px;
+      inset: -10px;
+      border-radius: 28px;
       background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.08));
       z-index: -1;
     }
@@ -127,24 +221,19 @@
     .flyer {
       width: 100%;
       display: block;
-      border-radius: 26px;
-      box-shadow: 0 28px 70px rgba(11, 75, 63, 0.28);
-      border: 6px solid rgba(255,255,255,0.55);
+      border-radius: 20px;
+      box-shadow: 0 20px 46px rgba(11, 75, 63, 0.22);
+      border: 5px solid rgba(255,255,255,0.55);
     }
 
     @media (max-width: 700px) {
       .page {
-        padding: 14px 8px 24px;
+        padding: 14px 8px 30px;
       }
 
       .top {
         padding: 8px 8px 0;
         margin-bottom: 18px;
-      }
-
-      .eyebrow {
-        font-size: 0.72rem;
-        padding: 8px 13px;
       }
 
       h1 {
@@ -161,8 +250,37 @@
         font-size: 0.95rem;
       }
 
+      .video-section {
+        margin-top: 28px;
+      }
+
+      .video-frame {
+        border-radius: 18px;
+        border-width: 4px;
+      }
+
+      .credits {
+        margin-top: 30px;
+        padding: 22px 14px;
+        border-radius: 24px;
+      }
+
+      .credits-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .credit-card {
+        padding: 16px;
+        border-radius: 18px;
+      }
+
+      .credit-card ul {
+        columns: 1;
+      }
+
       .flyer-wrap {
-        margin-top: 26px;
+        width: min(100%, 330px);
       }
 
       .flyer-wrap::before {
@@ -181,7 +299,6 @@
 <body>
   <main class="page">
     <section class="top">
-  
       <h1>Mango Ball ’26</h1>
 
       <a class="button" href="https://www.zeffy.com/en-US/organizations/mango-ball">
@@ -189,7 +306,243 @@
       </a>
     </section>
 
-    <section class="flyer-wrap">
+    <section class="video-section" aria-label="Mango Ball video">
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID"
+          title="Mango Ball video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="credits" aria-labelledby="credits-title">
+      <h2 id="credits-title">Credits</h2>
+      <p class="credits-intro">
+        Endless love and gratitude to everyone who helped make the ball happen.
+      </p>
+
+      <div class="credits-grid">
+        <article class="credit-card">
+          <h3>Venue</h3>
+          <p>Logan Moises</p>
+        </article>
+
+        <article class="credit-card">
+          <h3>DJs</h3>
+          <ul>
+            <li>Cereza</li>
+            <li>Pressure Point</li>
+            <li>Saturnsarii</li>
+            <li>Pink Bone</li>
+            <li>Java Plum</li>
+            <li>Duun</li>
+            <li>Fear of Corners</li>
+            <li>Egyptian Helicopter</li>
+            <li>Xilla</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <h3>Flyer</h3>
+          <p>Shelby Slayden</p>
+        </article>
+
+        <article class="credit-card">
+          <h3>Audio Visual</h3>
+          <ul>
+            <li>Victor Princiotta — Wave Ray Productions</li>
+            <li>Gavin J Burnett</li>
+            <li>Derek Gabaldon</li>
+            <li>Nick Harrington</li>
+            <li>Benjamin Chomitz</li>
+          </ul>
+        </article>
+
+        <article class="credit-card wide">
+          <h3>Art</h3>
+          <ul>
+            <li>Penny Crane — Mango Disco Balls</li>
+            <li>Jennie Perri &amp; Fernando Torres — Fortune Booth</li>
+            <li>Marlee Gleiberman &amp; Adriana Riley — Mango Tree Sculpture</li>
+            <li>Catherine Crotty — Wish Station</li>
+            <li>Benjamin Chomitz — Mango Cam photos</li>
+            <li>Allyssa Cili — Miniature Bug Mango Disco</li>
+            <li>Amanda Lewan — Mango Mirrors</li>
+            <li>Sara Haley — Mango-toe Booth</li>
+            <li>Cory Penca — Mango Dome</li>
+            <li>CC &amp; Shelby Slayden — Syd the Seed</li>
+            <li>O, Miami — Mango Poems &amp; Fruit Stickers</li>
+            <li>Monica Berra — Fruit picker lamps</li>
+            <li>Derek Gabaldon — DJ Booth Spinning Logo Projection</li>
+            <li>Francesca Hawthorne — Poem box</li>
+            <li>Jared Simon — Make up your own title jared</li>
+            <li>Kayla Delacerda — Mango Video Projections</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <h3>Silent Art Auction</h3>
+          <ul>
+            <li>Jayme Kaye Gershen</li>
+            <li>Orlando Castro</li>
+            <li>Magnus Sodamin</li>
+            <li>Thomas Bils</li>
+            <li>Sam Speed</li>
+            <li>Benjamin Chomitz</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <h3>Decor</h3>
+          <ul>
+            <li>Catherine Crotty</li>
+            <li>Penny Crane</li>
+            <li>Derek Gabaldon</li>
+            <li>Victor Princiotta — Wave Ray Productions</li>
+            <li>Emery Matson</li>
+            <li>Logan Moises</li>
+            <li>Laura Hinkes</li>
+            <li>Marlee Gleiberman</li>
+            <li>Adriana Riley</li>
+          </ul>
+        </article>
+
+        <article class="credit-card">
+          <h3>Fundraiser Art Raffle</h3>
+          <ul>
+            <li>Magnus Sodamin</li>
+            <li>James Jackman</li>
+            <li>Thomas Bils</li>
+            <li>Benjamin Chomitz</li>
+          </ul>
+        </article>
+
+        <article class="credit-card wide">
+          <h3>Food and Drink</h3>
+          <ul>
+            <li>Sam Kraft — Chawargaritas, coolers, ice &amp; custom color changing mood cups</li>
+            <li>Marshall Hendrickson &amp; Valeria Alvarez/Peel — Mango soft serve</li>
+            <li>Sam Speed — Empanadas</li>
+            <li>CC &amp; Kris Wessel — Sandwiches</li>
+            <li>Alan Alarcon/Cardinal Film Lab — Water jugs</li>
+            <li>Christian Kamrath &amp; Ana Tarano — Water bottles</li>
+            <li>Jennie Perri — Mango jello shots</li>
+            <li>Marin Dearie — Tajin jello shots</li>
+            <li>Amanda Lewan — Mango sticky rice</li>
+            <li>Megan Diaz — Mango fizz</li>
+            <li>Natasha Tomchin/Beatriz Chachamovits — Mango cheesecake</li>
+            <li>Simon Caicedo/El Bagel — Bagels</li>
+            <li>Fernando Diaz — Spanish Tortilla</li>
+            <li>Bella Reyes — Boiled peanut mango salsa</li>
+            <li>Katie Reid — Beer keg</li>
+            <li>Mystery! Who made this? — Butter mochi</li>
+            <li>Lucas Cravero — BRĒZ</li>
+            <li>Evan Marcus — Chawar</li>
+            <li>Jayme Kaye Gershen — Mango bread</li>
+            <li>James Jackman — Pizza</li>
+            <li>Kelsey Flitter — Lychee martini</li>
+            <li>Sarah Hinkes — Mango shells</li>
+            <li>Janet Penca — Mango Salsa</li>
+            <li>Bagel — Mango cocktail thing</li>
+            <li>Adam Gersten — Bar support</li>
+          </ul>
+        </article>
+
+        <article class="credit-card wide">
+          <h3>Set Up</h3>
+          <ul>
+            <li>Adriana Riley</li>
+            <li>Alan Alarcon</li>
+            <li>Alejandro Villegas</li>
+            <li>Allyssa Cili</li>
+            <li>Amanda Lewan</li>
+            <li>Ana Paz</li>
+            <li>Beatriz Chachamovits</li>
+            <li>Bella Reyes</li>
+            <li>Benjamin Chomitz</li>
+            <li>Bradley Schneider</li>
+            <li>Cailen Caplan</li>
+            <li>Catherine Crotty</li>
+            <li>CC</li>
+            <li>Cory Penca</li>
+            <li>Derek Gabaldon</li>
+            <li>Emery Matson</li>
+            <li>Fernando Diaz</li>
+            <li>Fernando Torres</li>
+            <li>Haiwen</li>
+            <li>Hannah Blizzard</li>
+            <li>Jared Simon</li>
+            <li>Jennie Perri</li>
+            <li>Kris Wessel</li>
+            <li>Lauren Reilly</li>
+            <li>Logan Moises</li>
+            <li>Marin Dearie</li>
+            <li>Marlee Gleiberman</li>
+            <li>Marlon Ammann</li>
+            <li>Megan Diaz</li>
+            <li>Monica Berra</li>
+            <li>Naomi Davis</li>
+            <li>Natasha Portuondo</li>
+            <li>Nick Harrington</li>
+            <li>Penny Crane</li>
+            <li>Sam Kraft</li>
+            <li>Sam Speed</li>
+            <li>Sandy Heyaime</li>
+            <li>Sara Haley</li>
+            <li>Sarah Hinkes</li>
+            <li>Shelby Slayden</li>
+            <li>Thomas Bils</li>
+          </ul>
+        </article>
+
+        <article class="credit-card wide">
+          <h3>Break Down and Clean Up</h3>
+          <ul>
+            <li>Adriana Riley</li>
+            <li>Alejandro Villegas</li>
+            <li>Alexander Hayes</li>
+            <li>Alexis Reynolds</li>
+            <li>Amanda Lewan</li>
+            <li>Ana Tarano</li>
+            <li>Benjamin Chomitz</li>
+            <li>Cailen Caplan</li>
+            <li>Catherine Crotty</li>
+            <li>Corinna Wollmann</li>
+            <li>Cory Penca</li>
+            <li>Derek Gabaldon</li>
+            <li>Fernando Torres</li>
+            <li>Haiwen</li>
+            <li>Jared Simon</li>
+            <li>Jennie Perri</li>
+            <li>Lauren Reilly</li>
+            <li>Logan Moises</li>
+            <li>Marlee Gleiberman</li>
+            <li>Megan Diaz</li>
+            <li>Monica Berra</li>
+            <li>Monica Rasmussen</li>
+            <li>Natasha Portuondo</li>
+            <li>Nick Harrington</li>
+            <li>Penny Crane</li>
+            <li>Sam Kraft</li>
+            <li>Sam Speed</li>
+            <li>Sandy Heyaime</li>
+            <li>Sara Haley</li>
+            <li>Sarah Hinkes</li>
+            <li>Shelby Slayden</li>
+            <li>Victor Princiotta</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="closing">
+        If we missed anyone we are sorry and we love you!<br />
+        Mango Ball Forever
+      </p>
+    </section>
+
+    <section class="flyer-wrap" aria-label="Mango Ball flyer">
       <img class="flyer" src="Mango_Ball2026.JPG" alt="Mango Ball 2026 flyer" />
     </section>
   </main>
